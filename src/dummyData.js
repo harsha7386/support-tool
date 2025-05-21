@@ -1,4 +1,3 @@
-// dummyChatData.js
 
 const dummyChats = {
   "Harsha Reddy": [

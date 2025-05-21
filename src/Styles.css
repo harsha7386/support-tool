@@ -1,4 +1,4 @@
-/* Prevent page scroll */
+
 html, body {
   margin: 0;
   padding: 0;
@@ -7,7 +7,6 @@ html, body {
   font-family: Arial, sans-serif;
 }
 
-/* Layout */
 body {
   display: flex;
   flex-direction: column;
@@ -31,7 +30,7 @@ body {
 
 .menu-container {
   position: relative;
-  margin-left: auto; /* Push it to the right */
+  margin-left: auto; 
 }
 
 .menu-button {
@@ -43,7 +42,7 @@ body {
 
 .menu-options {
   position: absolute;
-  right: 0; /* Align to the right edge of the container */
+  right: 0; 
   top: 100%;
   background-color: #ffffff;
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
@@ -61,7 +60,6 @@ body {
 .menu-options div:hover {
   background-color: #f0f0f0;
 }
-/* Sidebar */
 .sidebar {
   width: 20%;
   min-width: 150px;
@@ -106,7 +104,6 @@ body {
   background-color: #ddd;
 }
 
-/* Chat Box */
 .chat-box {
   flex: 1;
   display: flex;
@@ -122,7 +119,6 @@ body {
   margin-bottom: 1rem;
 }
 
-/* Chat messages area */
 .chat-body {
   flex: 1;
   overflow-y: auto;
@@ -154,7 +150,6 @@ body {
   text-align: right;
 }
 
-/* Input area */
 .chat-input {
   display: flex;
   gap: 0.5rem;
@@ -197,7 +192,6 @@ body {
   background-color: #0056b3;
 }
 
-/* AI Pilot */
 .ai-pilot {
   width: 22%;
   min-width: 200px;
@@ -235,9 +229,7 @@ body {
   border-radius: 4px;
 }
 
-/* .ai-pilot button:hover {
-  background-color: #0056b3;
-} */
+
 
 .suggestion-box {
   margin-top: 1rem;
@@ -250,7 +242,6 @@ body {
   line-height: 1.4;
 }
 
-/* Copy options popup */
 .copy-options {
   position: absolute;
   background-color: white;
@@ -261,16 +252,15 @@ body {
   border-radius: 6px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   z-index: 1000;
-  display: none; /* Toggle with JavaScript */
+  display: none; 
 }
 
-/* Selection style */
 ::selection {
   background-color: white;
-  color: #b0c4de; /* Light yash/lavender blue */
+  color: #b0c4de; 
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
@@ -312,6 +302,6 @@ body {
   }
 }
 .customer-name {
-  color: #007bff; /* Bootstrap primary blue, or choose any color */
+  color: #007bff; 
   font-weight: bold;
 }

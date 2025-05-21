@@ -37,7 +37,7 @@ const AIPilot = ({ onAddToComposer }) => {
         )}
       </div>
 
-      {/* Search input at bottom */}
+     
       <div style={{ marginTop: 'auto' }}>
         <textarea
           rows="3"

@@ -4,7 +4,7 @@ import SideBar from './components/SideBar';
 import ChatBox from './components/ChatBox';
 import AIPilot from './components/AIPilot';
 import './Styles.css';
-import dummyChats from './dummyData'; // ✅ Imported here
+import dummyChats from './dummyData'; 
 
 function App() {
   const [selectedCustomer, setSelectedCustomer] = useState(null);

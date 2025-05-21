@@ -1,7 +1,6 @@
 const SideBar = ({ onCustomerClick }) => {
   const customers = ['Harsha Reddy', 'Vishu', 'Aditya', 'Sai'];
 
-  // Generate a color from the customer name (simple hash function)
   const getColorForName = (name) => {
     const colors = ['#e57373', '#81c784', '#64b5f6', '#ffd54f', '#ba68c8', '#4db6ac', '#ff8a65'];
     let hash = 0;
