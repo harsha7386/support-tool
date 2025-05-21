@@ -6,8 +6,7 @@ const ChatBox = ({ customer, messages = [], inputText, setInputText, onSend }) =
   const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
   const [selectedTextRange, setSelectedTextRange] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [summaryText, setSummaryText] = useState('');
-  const [chatTransferred, setChatTransferred] = useState(false);
+  const [customerSummaries, setCustomerSummaries] = useState({});
   const inputRef = useRef();
   const aiOptionsRef = useRef();
 
@@ -91,14 +90,24 @@ const ChatBox = ({ customer, messages = [], inputText, setInputText, onSend }) =
   };
 
   const handleSummarize = () => {
-    setSummaryText(summarizeChat());
-    setChatTransferred(false);
+    setCustomerSummaries(prev => ({
+      ...prev,
+      [customer]: {
+        summary: summarizeChat(),
+        transferred: false
+      }
+    }));
     setMenuOpen(false);
   };
 
   const handleTransfer = () => {
-    setSummaryText(summarizeChat());
-    setChatTransferred(true);
+    setCustomerSummaries(prev => ({
+      ...prev,
+      [customer]: {
+        summary: summarizeChat(),
+        transferred: true
+      }
+    }));
     setMenuOpen(false);
   };
 
@@ -106,9 +115,8 @@ const ChatBox = ({ customer, messages = [], inputText, setInputText, onSend }) =
     <div className="chat-box">
       <div className="chat-header">
         {customer ? (
-          <span>Chat with <span className="customer-name">{customer}</span>
-          </span>
-              ) : 'Select a customer to start'}
+          <span>Chat with <span className="customer-name">{customer}</span></span>
+        ) : 'Select a customer to start'}
         <div className="menu-container">
           <button className="menu-button" onClick={() => setMenuOpen(!menuOpen)}>⋮</button>
           {menuOpen && (
@@ -134,12 +142,12 @@ const ChatBox = ({ customer, messages = [], inputText, setInputText, onSend }) =
           ))
         )}
 
-        {summaryText && (
+        {customerSummaries[customer]?.summary && (
           <div className="chat-summary-container">
             <button className="summary-button">
-              <strong>Chat Summary:</strong> {summaryText}
+              <strong>Chat Summary:</strong> {customerSummaries[customer].summary}
             </button>
-            {chatTransferred && (
+            {customerSummaries[customer].transferred && (
               <button className="transfer-button">
                 <em>Chat has been transferred.</em>
               </button>
